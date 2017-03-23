@@ -1,0 +1,35 @@
+device serial 004758444747
+
+source /opt/ros/kinetic/setup.bash
+source devel/setup.bash
+
+#################################################################
+new T:
+roscore
+
+new T:
+rosrun kinect2_bridge kinect2_bridge
+
+new T:
+rosrun kinect2_viewer kinect2_viewer
+rosrun kinect2_viewer kinect2_viewer sd image
+
+#################################################################
+#################################################################
+
+new T:
+roscore
+
+new T:
+roslaunch kinect2_bridge kinect2_bridge.launch
+
+new T:
+./recorder.sh
+or
+rosrun kinect2_viewer kinect2_viewer qhd image
+
+#################################################################
+#################################################################
+
+rviz
+openni
